@@ -1,7 +1,7 @@
-from src.utils import filter_by_regex
+from src.utils import filter_by_regex, list_to_json
 
 
-def search_regex(data: list, search: str) -> list:
+def search_regex(data: list, search: str) -> str:
     """функция возвращает JSON-ответ со всеми транзакциями, содержащими запрос в описании или категории"""
     new_data = filter_by_regex(data, search.lower())
-    return new_data
+    return list_to_json(new_data)
